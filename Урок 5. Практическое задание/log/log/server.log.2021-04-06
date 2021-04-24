@@ -1,6 +1,0 @@
-2021-04-06 15:26:32,281   INFO        pid: 12076 server.py line: 75 Server started. port: 7777 , IP: .
-2021-04-06 16:13:47,277   INFO        pid: 2308 server.py line: 75 Server started. port: 7777 , IP: .
-2021-04-06 16:15:57,335   INFO        pid: 6184 server.py line: 75 Server started. port: 7777 , IP: .
-2021-04-06 16:16:17,208   INFO        pid: 6184 server.py line: 95 Connection to ('127.0.0.1', 59547) established 
-2021-04-06 16:16:19,216   DEBUG       pid: 6184 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617714977.249152, 'user': {'account_name': 'aaa'}}
-2021-04-06 18:29:59,883   INFO        pid: 9084 server.py line: 75 Server started. port: 7777 , IP: .
