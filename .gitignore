@@ -1,0 +1,3 @@
+*.asd
+.idea
+__pycache__ 
