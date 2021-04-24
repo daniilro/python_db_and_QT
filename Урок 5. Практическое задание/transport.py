@@ -1,24 +1,17 @@
-import socket
-import sys
-import time
-import logging
+'''
+
+'''
 import json
+import socket
 import threading
+import time
+
 from PyQt5.QtCore import pyqtSignal, QObject
 
-
-from client_db import ClientDB
-from errors import IncorrectDataRecivedError, ReqFieldMissingError, ServerError
-from decors import log
 from common_defs import *
 from common_defs.messages import send_message, get_my_message
+from errors import ServerError
 
-
-#from common.utils import *
-#from common.variables import *
-#from common.errors import ServerError
-
-# Логер и объект блокировки для работы с сокетом.
 logger = logging.getLogger('client')
 socket_lock = threading.Lock()
 
@@ -126,9 +119,8 @@ class ClientTransport(threading.Thread, QObject):
         elif ACTION in message and message[ACTION] == MESSAGE and SENDER in message and DESTINATION in message \
                 and MESSAGE_TEXT in message and message[DESTINATION] == self.username:
             logger.debug(f'Получено сообщение от пользователя {message[SENDER]}:{message[MESSAGE_TEXT]}')
-            self.database.save_message(message[SENDER] , 'in' , message[MESSAGE_TEXT])
+            self.database.save_message(message[SENDER], 'in', message[MESSAGE_TEXT])
             self.new_message.emit(message[SENDER])
-
 
     # Функция обновляющая контакт - лист с сервера
     def contacts_list_update(self):

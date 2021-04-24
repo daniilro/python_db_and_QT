@@ -133,14 +133,15 @@ class Server(threading.Thread, metaclass=ServerMaker):
             self.messages.clear()
 
             # Если есть сообщения, обрабатываем каждое.
-#            for message in self.messages:
-#                try:
-#                    self.process_message(message, send_data_lst)
-#                except:
-#                    LOGGER.info(f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
-#                    self.clients.remove(self.names[message[DESTINATION]])
-#                    del self.names[message[DESTINATION]]
-#            self.messages.clear()
+
+    #            for message in self.messages:
+    #                try:
+    #                    self.process_message(message, send_data_lst)
+    #                except:
+    #                    LOGGER.info(f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
+    #                    self.clients.remove(self.names[message[DESTINATION]])
+    #                    del self.names[message[DESTINATION]]
+    #            self.messages.clear()
 
     ##################################################################################################
     def process_message(self, message, listen_socks):

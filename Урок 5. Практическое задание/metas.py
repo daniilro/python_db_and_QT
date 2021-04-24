@@ -5,6 +5,7 @@
 
 import dis
 
+
 ###########################################################
 class ServerMaker(type):
 
@@ -35,6 +36,7 @@ class ServerMaker(type):
 
         super().__init__(clsname, bases, clsdict)
 
+
 ##################################################################################
 class ClientMaker(type):
     def __init__(self, clsname, bases, clsdict):
@@ -59,8 +61,4 @@ class ClientMaker(type):
                 raise TypeError('В классе обнаружено использование запрещённого метода')
         super().__init__(clsname, bases, clsdict)
 
-
-
 ###########################################################
-
-

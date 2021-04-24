@@ -7,13 +7,13 @@ import argparse
 import sys
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import qApp, QMessageBox, QMainWindow, QDialog
-from client_db import ClientDB
-from errors import IncorrectDataRecivedError, ReqFieldMissingError, ServerError
-from transport import ClientTransport
-from client_main_window import ClientMainWindow
+from PyQt5.QtWidgets import qApp, QMessageBox
 
+from client_db import ClientDB
+from client_main_window import ClientMainWindow
 from common_defs import *
+from errors import ServerError
+from transport import ClientTransport
 
 ################################################################
 
@@ -26,7 +26,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--addr", default=DEF_IP_ADDR)
     parser.add_argument("-p", "--port", type=int, default=DEF_PORT)
-    #parser.add_argument('-n', '--name', default=None, nargs='?')
+    # parser.add_argument('-n', '--name', default=None, nargs='?')
     parser.add_argument('-n', '--name', default='test_user', nargs='?')
     args = parser.parse_args()
     if int(args.port) < 1024 or int(args.port) > 65535:
@@ -57,6 +57,7 @@ class ClientConnectWindow(QtWidgets.QDialog):
         print(f"Client name: {self.client_name.text()}")
         self.ok_pressed = True
         qApp.exit()
+
 
 ################################################################
 if __name__ == '__main__':

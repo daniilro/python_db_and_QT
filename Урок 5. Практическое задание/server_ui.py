@@ -1,5 +1,6 @@
-# from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QTableView, QtWidgets
-# from PyQt5.QtWidgets import *
+'''
+
+'''
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *

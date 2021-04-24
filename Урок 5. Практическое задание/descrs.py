@@ -3,15 +3,15 @@
 
 '''
 
-import sys
 import logging
-
+import sys
 
 ###########################################################
 if sys.argv[0].find('client') == -1:
     LOGGER = logging.getLogger('server')
 else:
     LOGGER = logging.getLogger('client')
+
 
 ###########################################################
 class Port:
@@ -24,4 +24,3 @@ class Port:
 
     def __set_name__(self, owner, name):
         self.name = name
-

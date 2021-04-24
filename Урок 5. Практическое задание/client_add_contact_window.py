@@ -3,17 +3,14 @@
 
 '''
 
-import sys
 import logging
 
-from PyQt5.QtWidgets import QDialog, QLabel, QComboBox, QPushButton
-from PyQt5 import QtWidgets, uic
-
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5 import uic
+from PyQt5.QtWidgets import QDialog
 
 ############################################################################
 logger = logging.getLogger('client')
+
 
 ############################################################################
 class AddContactDialog(QDialog):
@@ -25,17 +22,16 @@ class AddContactDialog(QDialog):
         uic.loadUi('ClientAddContactWindow.ui', self)
         self.setWindowTitle('Add contact')
 
-
         self.possible_contacts_update()
         # Назначаем действие на кнопку обновить
-        #self.buttonBox.accepted.connect(self.update_possible_contacts)
+        # self.buttonBox.accepted.connect(self.update_possible_contacts)
 
         self.btn_add.clicked.connect(self.update_possible_contacts)
         self.btn_cancel.clicked.connect(self.close)
         self.btn_refresh.clicked.connect(self.update_possible_contacts)
-        #self.buttonBox.accepted.connect(self.clickOk)
+        # self.buttonBox.accepted.connect(self.clickOk)
 
-        #connect(ui->buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), SLOT(on_reset_clicked())
+        # connect(ui->buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), SLOT(on_reset_clicked())
 
     ###############################################
     def possible_contacts_update(self):

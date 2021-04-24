@@ -1,4 +1,4 @@
-*.db
+*.db3
 .idea
 __pycache__ 
 client.log*
