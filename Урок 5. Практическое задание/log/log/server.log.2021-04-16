@@ -1,0 +1,49 @@
+2021-04-16 08:50:23,014   DEBUG       pid: 6808 server.py line: 157 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1618552222.6855454, 'mess_text': '2222222222222222'}
+2021-04-16 08:50:23,070   INFO        pid: 6808 server.py line: 148 Отправлено сообщение пользователю aaa от пользователя bbb.
+2021-04-16 08:57:35,996   INFO        pid: 13020 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-16 09:26:35,512   INFO        pid: 13020 server.py line: 91 Connection to ('127.0.0.1', 57176) established 
+2021-04-16 09:26:36,013   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'presence', 'time': 1618554395.5126138, 'user': {'account_name': 'aaa'}}
+2021-04-16 09:26:36,552   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_users', 'time': 1618554396.0559838, 'account_name': 'aaa'}
+2021-04-16 09:26:37,058   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_contacts', 'time': 1618554396.58826, 'user': 'aaa'}
+2021-04-16 09:26:45,585   INFO        pid: 13020 server.py line: 91 Connection to ('127.0.0.1', 57177) established 
+2021-04-16 09:26:46,086   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'presence', 'time': 1618554405.585954, 'user': {'account_name': 'bbb'}}
+2021-04-16 09:26:46,620   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_users', 'time': 1618554406.1217632, 'account_name': 'bbb'}
+2021-04-16 09:26:47,124   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_contacts', 'time': 1618554406.6594174, 'user': 'bbb'}
+2021-04-16 09:27:14,661   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1618554433.7472053, 'mess_text': 'aaaaaaaaaaaaaaaaaaaaaaaa'}
+2021-04-16 09:27:14,703   INFO        pid: 13020 server.py line: 148 Отправлено сообщение пользователю aaa от пользователя bbb.
+2021-04-16 09:27:37,225   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618554457.1868916, 'mess_text': 'hhhhhhhhhhhhhhhhhhh'}
+2021-04-16 09:27:37,247   INFO        pid: 13020 server.py line: 148 Отправлено сообщение пользователю bbb от пользователя aaa.
+2021-04-16 09:30:06,698   INFO        pid: 13020 server.py line: 91 Connection to ('127.0.0.1', 57182) established 
+2021-04-16 09:30:07,199   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'presence', 'time': 1618554606.6993163, 'user': {'account_name': 'ccc'}}
+2021-04-16 09:30:07,740   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_users', 'time': 1618554607.2417836, 'account_name': 'ccc'}
+2021-04-16 09:30:08,242   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'get_contacts', 'time': 1618554608.1022043, 'user': 'ccc'}
+2021-04-16 09:30:18,253   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'add', 'time': 1618554618.0013092, 'user': 'ccc', 'account_name': 'aaa'}
+2021-04-16 09:30:28,296   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'message', 'from': 'ccc', 'to': 'aaa', 'time': 1618554627.8187015, 'mess_text': 'assdgsgsdgsdgsdgd'}
+2021-04-16 09:30:28,335   INFO        pid: 13020 server.py line: 148 Отправлено сообщение пользователю aaa от пользователя ccc.
+2021-04-16 09:30:54,862   DEBUG       pid: 13020 server.py line: 157 Message fom client : {'action': 'exit', 'time': 1618554654.6974642, 'account_name': 'ccc'}
+2021-04-16 09:42:26,852   INFO        pid: 3812 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-16 09:42:47,769   INFO        pid: 3812 server.py line: 92 Connection to ('127.0.0.1', 57218) established 
+2021-04-16 09:42:48,270   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'presence', 'time': 1618555367.769883, 'user': {'account_name': 'aaa'}}
+2021-04-16 09:42:48,813   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'get_users', 'time': 1618555368.3154578, 'account_name': 'aaa'}
+2021-04-16 09:42:49,319   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'get_contacts', 'time': 1618555368.8489826, 'user': 'aaa'}
+2021-04-16 09:42:55,609   INFO        pid: 3812 server.py line: 92 Connection to ('127.0.0.1', 57219) established 
+2021-04-16 09:42:56,109   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'presence', 'time': 1618555375.6097147, 'user': {'account_name': 'bbb'}}
+2021-04-16 09:42:56,652   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'get_users', 'time': 1618555376.155828, 'account_name': 'bbb'}
+2021-04-16 09:42:57,155   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'get_contacts', 'time': 1618555376.6760566, 'user': 'bbb'}
+2021-04-16 09:43:17,186   DEBUG       pid: 3812 server.py line: 158 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618555396.9537237, 'mess_text': 'dddddddddddddddd'}
+2021-04-16 09:43:17,226   INFO        pid: 3812 server.py line: 149 Отправлено сообщение пользователю bbb от пользователя aaa.
+2021-04-16 09:46:21,498   INFO        pid: 2660 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-16 09:46:43,565   INFO        pid: 2660 server.py line: 92 Connection to ('127.0.0.1', 57229) established 
+2021-04-16 09:46:44,065   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'presence', 'time': 1618555603.5656111, 'user': {'account_name': 'aaa'}}
+2021-04-16 09:46:44,585   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'get_users', 'time': 1618555604.0857785, 'account_name': 'aaa'}
+2021-04-16 09:46:45,088   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'get_contacts', 'time': 1618555604.6062155, 'user': 'aaa'}
+2021-04-16 09:46:50,544   INFO        pid: 2660 server.py line: 92 Connection to ('127.0.0.1', 57230) established 
+2021-04-16 09:46:51,044   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'presence', 'time': 1618555610.544355, 'user': {'account_name': 'bbb'}}
+2021-04-16 09:46:51,582   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'get_users', 'time': 1618555611.0847597, 'account_name': 'bbb'}
+2021-04-16 09:46:52,088   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'get_contacts', 'time': 1618555611.6161065, 'user': 'bbb'}
+2021-04-16 09:47:04,607   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1618555623.8822618, 'mess_text': 'ddddddddddddddddhhjjfdfgjhdfh\n'}
+2021-04-16 09:47:04,649   INFO        pid: 2660 server.py line: 149 Отправлено сообщение пользователю aaa от пользователя bbb.
+2021-04-16 09:47:32,676   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618555652.3464806, 'mess_text': 'sgjsgjsjgsjgjjg'}
+2021-04-16 09:47:32,716   INFO        pid: 2660 server.py line: 149 Отправлено сообщение пользователю bbb от пользователя aaa.
+2021-04-16 18:07:35,800   DEBUG       pid: 2660 server.py line: 158 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618585655.342321, 'mess_text': 'аааааааааааааааааааааааааааа'}
+2021-04-16 18:07:35,857   INFO        pid: 2660 server.py line: 149 Отправлено сообщение пользователю bbb от пользователя aaa.

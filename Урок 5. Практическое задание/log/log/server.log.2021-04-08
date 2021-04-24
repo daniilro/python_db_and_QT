@@ -1,0 +1,44 @@
+2021-04-08 19:09:30,562   INFO        pid: 12616 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:10:18,615   INFO        pid: 12616 server.py line: 95 Connection to ('127.0.0.1', 50472) established 
+2021-04-08 19:10:20,627   DEBUG       pid: 12616 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617898218.6913393, 'user': {'account_name': 'sss'}}
+2021-04-08 19:24:42,046   INFO        pid: 8940 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:24:56,209   INFO        pid: 8940 server.py line: 95 Connection to ('127.0.0.1', 50498) established 
+2021-04-08 19:24:58,264   DEBUG       pid: 8940 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617899096.2864232, 'user': {'account_name': 'ddf'}}
+2021-04-08 19:31:05,112   INFO        pid: 4180 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:31:23,642   INFO        pid: 4180 server.py line: 95 Connection to ('127.0.0.1', 50510) established 
+2021-04-08 19:31:25,744   DEBUG       pid: 4180 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617899483.7150118, 'user': {'account_name': 'aas'}}
+2021-04-08 19:32:37,064   INFO        pid: 11764 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:32:54,858   INFO        pid: 11764 server.py line: 95 Connection to ('127.0.0.1', 50511) established 
+2021-04-08 19:32:56,880   DEBUG       pid: 11764 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617899574.9317894, 'user': {'account_name': 'ffg'}}
+2021-04-08 19:51:38,259   INFO        pid: 11272 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:51:54,984   INFO        pid: 11272 server.py line: 95 Connection to ('127.0.0.1', 50553) established 
+2021-04-08 19:51:56,994   DEBUG       pid: 11272 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617900715.059788, 'user': {'account_name': 'asd'}}
+2021-04-08 19:53:27,001   INFO        pid: 5232 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:53:37,198   INFO        pid: 5232 server.py line: 95 Connection to ('127.0.0.1', 50555) established 
+2021-04-08 19:53:39,199   DEBUG       pid: 5232 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617900817.2716203, 'user': {'account_name': 'ddd'}}
+2021-04-08 19:55:02,120   INFO        pid: 12736 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:55:10,792   INFO        pid: 12736 server.py line: 95 Connection to ('127.0.0.1', 50561) established 
+2021-04-08 19:56:20,348   INFO        pid: 12816 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:56:32,353   INFO        pid: 12816 server.py line: 95 Connection to ('127.0.0.1', 50566) established 
+2021-04-08 19:56:50,161   INFO        pid: 11628 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:56:59,913   INFO        pid: 11628 server.py line: 95 Connection to ('127.0.0.1', 50567) established 
+2021-04-08 19:57:01,913   DEBUG       pid: 11628 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617901019.9859228, 'user': {'account_name': 'asdasdsa'}}
+2021-04-08 19:57:43,574   INFO        pid: 10452 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:57:52,634   INFO        pid: 10452 server.py line: 95 Connection to ('127.0.0.1', 50572) established 
+2021-04-08 19:59:03,620   INFO        pid: 3768 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 19:59:13,434   INFO        pid: 3768 server.py line: 95 Connection to ('127.0.0.1', 50575) established 
+2021-04-08 19:59:15,435   DEBUG       pid: 3768 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617901153.5083458, 'user': {'account_name': 'dddddddddd'}}
+2021-04-08 19:59:17,471   DEBUG       pid: 3768 server.py line: 142 Message fom client : {'action': 'get_users', 'time': 1617901155.5578125, 'account_name': 'dddddddddd'}
+2021-04-08 20:02:05,089   INFO        pid: 11760 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 20:02:22,508   INFO        pid: 11760 server.py line: 95 Connection to ('127.0.0.1', 50580) established 
+2021-04-08 20:02:24,508   DEBUG       pid: 11760 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617901342.5859249, 'user': {'account_name': 'ssssss'}}
+2021-04-08 20:02:26,580   DEBUG       pid: 11760 server.py line: 142 Message fom client : {'action': 'get_users', 'time': 1617901344.6848233, 'account_name': 'ssssss'}
+2021-04-08 20:08:17,011   INFO        pid: 1288 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 20:08:38,990   INFO        pid: 1288 server.py line: 95 Connection to ('127.0.0.1', 50596) established 
+2021-04-08 20:08:40,992   DEBUG       pid: 1288 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617901719.0684123, 'user': {'account_name': 'ddddddd'}}
+2021-04-08 20:08:43,031   DEBUG       pid: 1288 server.py line: 142 Message fom client : {'action': 'get_users', 'time': 1617901721.1083727, 'account_name': 'ddddddd'}
+2021-04-08 20:08:45,038   DEBUG       pid: 1288 server.py line: 142 Message fom client : {'action': 'get_contacts', 'time': 1617901723.067243, 'user': 'ddddddd'}
+2021-04-08 20:13:56,642   INFO        pid: 11880 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-08 20:14:08,694   INFO        pid: 11880 server.py line: 95 Connection to ('127.0.0.1', 50606) established 
+2021-04-08 20:14:10,697   DEBUG       pid: 11880 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617902048.7687988, 'user': {'account_name': 'ddddd'}}
+2021-04-08 23:47:50,620   INFO        pid: 6464 server.py line: 75 Server started. port: 7777 , IP: .

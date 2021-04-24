@@ -1,0 +1,25 @@
+2021-04-12 22:27:10,885   INFO        pid: 11868 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-12 22:27:22,215   INFO        pid: 11868 server.py line: 91 Connection to ('127.0.0.1', 64109) established 
+2021-04-12 22:27:22,716   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'presence', 'time': 1618255642.216127, 'user': {'account_name': 'test_user'}}
+2021-04-12 22:27:23,249   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618255642.7517664, 'account_name': 'test_user'}
+2021-04-12 22:27:23,752   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_contacts', 'time': 1618255643.2660315, 'user': 'test_user'}
+2021-04-12 22:27:43,862   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618255663.7976336, 'account_name': 'test_user'}
+2021-04-12 22:27:44,363   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'add', 'time': 1618255663.8797793, 'user': 'test_user', 'account_name': ''}
+2021-04-12 22:28:10,725   INFO        pid: 11868 server.py line: 91 Connection to ('127.0.0.1', 64110) established 
+2021-04-12 22:28:11,225   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'presence', 'time': 1618255690.7250614, 'user': {'account_name': 'test_user1'}}
+2021-04-12 22:28:11,758   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618255691.2603748, 'account_name': 'test_user1'}
+2021-04-12 22:28:12,263   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_contacts', 'time': 1618255691.7794385, 'user': 'test_user1'}
+2021-04-12 22:28:22,891   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618255702.6621306, 'account_name': 'test_user'}
+2021-04-12 22:28:25,905   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618255705.7976532, 'account_name': 'test_user'}
+2021-04-12 22:28:26,409   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'add', 'time': 1618255705.924853, 'user': 'test_user', 'account_name': 'test_user1'}
+2021-04-12 22:29:40,687   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'exit', 'time': 1618255780.5470262, 'account_name': 'test_user'}
+2021-04-12 22:29:52,353   DEBUG       pid: 11868 server.py line: 138 Message fom client : {'action': 'exit', 'time': 1618255791.8157928, 'account_name': 'test_user1'}
+2021-04-12 22:30:30,190   INFO        pid: 11468 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-12 22:33:15,163   INFO        pid: 12044 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-12 22:33:33,479   INFO        pid: 12044 server.py line: 91 Connection to ('127.0.0.1', 64175) established 
+2021-04-12 22:33:33,980   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'presence', 'time': 1618256013.4796982, 'user': {'account_name': 'test1'}}
+2021-04-12 22:33:34,540   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618256014.0430307, 'account_name': 'test1'}
+2021-04-12 22:33:35,044   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'get_contacts', 'time': 1618256014.5650148, 'user': 'test1'}
+2021-04-12 22:34:02,243   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618256042.0382113, 'account_name': 'test1'}
+2021-04-12 22:34:02,745   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'add', 'time': 1618256042.2626023, 'user': 'test1', 'account_name': 'test_user'}
+2021-04-12 22:34:43,419   DEBUG       pid: 12044 server.py line: 138 Message fom client : {'action': 'exit', 'time': 1618256083.2161598, 'account_name': 'test1'}

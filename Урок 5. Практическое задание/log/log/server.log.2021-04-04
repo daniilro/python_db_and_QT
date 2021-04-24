@@ -1,0 +1,146 @@
+2021-04-04 13:45:14,234   INFO        pid: 5980 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 13:46:04,052   INFO        pid: 9980 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:11:32,693   INFO        pid: 10668 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:12:05,816   INFO        pid: 13968 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:12:55,712   INFO        pid: 11460 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:13:07,480   INFO        pid: 10684 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:15:01,512   INFO        pid: 11316 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:17:25,163   INFO        pid: 12008 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:17:49,951   INFO        pid: 13268 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:18:21,324   INFO        pid: 11620 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:40:58,649   INFO        pid: 11616 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:41:51,170   INFO        pid: 9572 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:42:03,970   INFO        pid: 6412 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:48:46,440   INFO        pid: 13996 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 14:51:19,109   INFO        pid: 5172 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 16:38:09,465   INFO        pid: 10612 server.py line: 64 Server started. port: 7777 , IP: .
+2021-04-04 16:43:09,841   INFO        pid: 13584 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:44:00,642   INFO        pid: 1324 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:46:24,835   INFO        pid: 13936 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:47:41,727   INFO        pid: 11624 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:48:34,408   INFO        pid: 12396 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:49:32,051   INFO        pid: 6572 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:50:57,478   INFO        pid: 12524 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 16:56:05,673   INFO        pid: 8668 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:03:03,733   INFO        pid: 5500 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:05:43,928   INFO        pid: 6516 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:05:59,898   INFO        pid: 13972 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:06:14,239   INFO        pid: 5140 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:06:21,468   INFO        pid: 13996 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:08:56,545   INFO        pid: 14296 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:09:08,147   INFO        pid: 11084 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:09:27,571   INFO        pid: 14088 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:09:42,382   INFO        pid: 13620 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:10:29,348   INFO        pid: 10916 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:11:48,525   INFO        pid: 13360 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:12:34,328   INFO        pid: 13948 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:13:48,683   INFO        pid: 10568 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:14:08,355   INFO        pid: 11528 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:14:17,286   INFO        pid: 10412 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:15:33,955   INFO        pid: 12880 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:15:55,014   INFO        pid: 7932 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:16:55,028   INFO        pid: 11964 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:17:12,611   INFO        pid: 1724 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:17:30,305   INFO        pid: 6128 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:18:04,542   INFO        pid: 9492 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:18:35,648   INFO        pid: 13568 server.py line: 69 Server started. port: 7777 , IP: .
+2021-04-04 17:35:18,249   INFO        pid: 11924 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:35:55,734   INFO        pid: 12136 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:36:40,926   INFO        pid: 8220 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:38:35,546   INFO        pid: 1516 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:39:12,470   INFO        pid: 11048 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:39:25,460   INFO        pid: 2968 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:39:46,758   INFO        pid: 2968 server.py line: 92 Connection to ('127.0.0.1', 55760) established 
+2021-04-04 17:39:48,760   DEBUG       pid: 2968 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617547186.7972496, 'user': {'account_name': 'aaa'}}
+2021-04-04 17:40:23,062   INFO        pid: 2968 server.py line: 92 Connection to ('127.0.0.1', 55764) established 
+2021-04-04 17:40:25,062   DEBUG       pid: 2968 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617547223.0975904, 'user': {'account_name': 'bbb'}}
+2021-04-04 17:40:35,109   DEBUG       pid: 2968 server.py line: 139 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1617547233.9167557, 'mess_text': 'sssssssssssssssssss'}
+2021-04-04 17:40:35,111   INFO        pid: 2968 server.py line: 130 Отправлено сообщение пользователю aaa от пользователя bbb.
+2021-04-04 17:41:46,017   INFO        pid: 5976 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:41:54,176   INFO        pid: 3200 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:41:59,807   INFO        pid: 3200 server.py line: 92 Connection to ('127.0.0.1', 55767) established 
+2021-04-04 17:42:01,808   DEBUG       pid: 3200 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617547319.8543062, 'user': {'account_name': 'aaa'}}
+2021-04-04 17:43:25,535   INFO        pid: 10512 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:47:04,374   INFO        pid: 14332 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 17:47:17,054   INFO        pid: 14332 server.py line: 92 Connection to ('127.0.0.1', 55788) established 
+2021-04-04 17:47:19,056   DEBUG       pid: 14332 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617547637.0874043, 'user': {'account_name': 'aaa'}}
+2021-04-04 17:59:38,625   INFO        pid: 7604 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:00:02,350   INFO        pid: 10852 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:00:12,655   INFO        pid: 10852 server.py line: 92 Connection to ('127.0.0.1', 55811) established 
+2021-04-04 18:00:14,656   DEBUG       pid: 10852 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617548412.6912842, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:00:24,710   DEBUG       pid: 10852 server.py line: 139 Message fom client : {'action': 'exit', 'time': 1617548423.6121256, 'account_name': 'aaa'}
+2021-04-04 18:01:47,356   INFO        pid: 7932 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:02:08,128   INFO        pid: 7932 server.py line: 92 Connection to ('127.0.0.1', 55816) established 
+2021-04-04 18:02:10,128   DEBUG       pid: 7932 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617548528.1696224, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:02:30,175   DEBUG       pid: 7932 server.py line: 139 Message fom client : {'action': 'exit', 'time': 1617548549.787613, 'account_name': 'aaa'}
+2021-04-04 18:02:34,847   INFO        pid: 7932 server.py line: 92 Connection to ('127.0.0.1', 55820) established 
+2021-04-04 18:02:36,848   DEBUG       pid: 7932 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617548554.8864636, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:02:39,383   INFO        pid: 7932 server.py line: 92 Connection to ('127.0.0.1', 55821) established 
+2021-04-04 18:02:41,384   DEBUG       pid: 7932 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617548559.4180055, 'user': {'account_name': 'bbb'}}
+2021-04-04 18:07:37,948   INFO        pid: 7352 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:07:51,783   INFO        pid: 7352 server.py line: 92 Connection to ('127.0.0.1', 55837) established 
+2021-04-04 18:07:53,784   DEBUG       pid: 7352 server.py line: 139 Message fom client : {'action': 'presence', 'time': 1617548871.8191826, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:08:09,845   DEBUG       pid: 7352 server.py line: 139 Message fom client : {'action': 'exit', 'time': 1617548889.7067952, 'account_name': 'aaa'}
+2021-04-04 18:11:25,912   INFO        pid: 10484 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:11:40,516   INFO        pid: 4068 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:24:26,165   INFO        pid: 5152 server.py line: 72 Server started. port: 7777 , IP: .
+2021-04-04 18:25:24,152   INFO        pid: 7312 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:27:33,415   INFO        pid: 14104 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:29:23,736   INFO        pid: 12600 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:31:52,833   INFO        pid: 12536 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:32:16,422   INFO        pid: 12536 server.py line: 93 Connection to ('127.0.0.1', 55917) established 
+2021-04-04 18:32:18,423   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'presence', 'time': 1617550336.4564033, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:32:20,453   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'exit', 'time': 1617550340.2894285, 'account_name': 'aaa'}
+2021-04-04 18:32:25,205   INFO        pid: 12536 server.py line: 93 Connection to ('127.0.0.1', 55918) established 
+2021-04-04 18:32:27,205   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'presence', 'time': 1617550345.240822, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:32:31,237   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'exit', 'time': 1617550349.2895207, 'account_name': 'aaa'}
+2021-04-04 18:32:35,877   INFO        pid: 12536 server.py line: 93 Connection to ('127.0.0.1', 55919) established 
+2021-04-04 18:32:37,877   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'presence', 'time': 1617550355.912331, 'user': {'account_name': 'aaa'}}
+2021-04-04 18:32:39,903   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'exit', 'time': 1617550357.9294968, 'account_name': 'aaa'}
+2021-04-04 18:32:46,366   INFO        pid: 12536 server.py line: 93 Connection to ('127.0.0.1', 55921) established 
+2021-04-04 18:32:48,366   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'presence', 'time': 1617550366.4015076, 'user': {'account_name': 'dfd'}}
+2021-04-04 18:32:52,409   DEBUG       pid: 12536 server.py line: 140 Message fom client : {'action': 'exit', 'time': 1617550371.657451, 'account_name': 'dfd'}
+2021-04-04 18:33:55,418   INFO        pid: 13336 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:35:11,857   INFO        pid: 13724 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 18:35:59,000   INFO        pid: 5140 server.py line: 73 Server started. port: 7777 , IP: .
+2021-04-04 19:33:58,313   INFO        pid: 11696 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:34:09,089   INFO        pid: 7128 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:35:35,575   INFO        pid: 13356 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:36:18,250   INFO        pid: 5424 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:37:45,997   INFO        pid: 14316 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:37:54,726   INFO        pid: 12492 server.py line: 74 Server started. port: 7777 , IP: .
+2021-04-04 19:39:30,732   INFO        pid: 6464 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:42:10,033   INFO        pid: 13728 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:47:01,689   INFO        pid: 12484 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:47:15,492   INFO        pid: 5292 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:48:29,362   INFO        pid: 9508 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:49:45,025   INFO        pid: 12524 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:52:03,369   INFO        pid: 5424 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:52:27,636   INFO        pid: 12776 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:52:40,406   INFO        pid: 8284 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:57:57,914   INFO        pid: 2428 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 19:58:32,457   INFO        pid: 7020 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:01:35,890   INFO        pid: 5452 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:02:01,879   INFO        pid: 13876 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:02:40,485   INFO        pid: 12176 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:03:41,579   INFO        pid: 8468 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:03:52,630   INFO        pid: 7680 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:32:26,338   INFO        pid: 7600 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:34:38,663   INFO        pid: 1268 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:35:02,445   INFO        pid: 12636 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:38:09,673   INFO        pid: 13184 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:38:17,735   INFO        pid: 3040 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:40:34,153   INFO        pid: 2152 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:40:47,445   INFO        pid: 9952 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:40:55,115   INFO        pid: 14104 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:44:13,539   INFO        pid: 5816 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:44:18,863   INFO        pid: 11580 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:46:49,626   INFO        pid: 7152 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 20:46:59,802   INFO        pid: 5152 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:10:37,804   INFO        pid: 12984 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:11:15,327   INFO        pid: 10052 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:12:51,763   INFO        pid: 2956 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:13:16,936   INFO        pid: 6488 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:14:03,031   INFO        pid: 2076 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-04 21:15:01,660   INFO        pid: 2076 server.py line: 95 Connection to ('127.0.0.1', 56149) established 
+2021-04-04 21:15:03,661   DEBUG       pid: 2076 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617560101.71738, 'user': {'account_name': 'asd'}}

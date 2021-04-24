@@ -1,0 +1,11 @@
+2021-04-05 09:39:12,526   INFO        pid: 12876 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-05 09:39:31,502   INFO        pid: 12476 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-05 11:03:05,409   INFO        pid: 8728 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-05 19:00:41,607   INFO        pid: 12516 server.py line: 75 Server started. port: 7777 , IP: .
+2021-04-05 19:01:19,793   INFO        pid: 12516 server.py line: 95 Connection to ('127.0.0.1', 62034) established 
+2021-04-05 19:01:21,794   DEBUG       pid: 12516 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617638479.8467643, 'user': {'account_name': 'aaa'}}
+2021-04-05 19:02:14,492   INFO        pid: 12516 server.py line: 95 Connection to ('127.0.0.1', 62037) established 
+2021-04-05 19:02:16,498   DEBUG       pid: 12516 server.py line: 142 Message fom client : {'action': 'presence', 'time': 1617638534.5271266, 'user': {'account_name': 'bbb'}}
+2021-04-05 19:02:52,533   DEBUG       pid: 12516 server.py line: 142 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1617638572.329995, 'mess_text': 'sssssssssssssssssssssssssssssssssssssss'}
+2021-04-05 19:02:52,536   INFO        pid: 12516 server.py line: 133 Отправлено сообщение пользователю aaa от пользователя bbb.
+2021-04-05 19:08:39,243   INFO        pid: 12120 server.py line: 75 Server started. port: 7777 , IP: .

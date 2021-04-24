@@ -1,0 +1,19 @@
+2021-04-11 16:45:28,256   INFO        pid: 7028 server.py line: 70 Server started. port: 7777 , IP: .
+2021-04-11 16:45:43,651   INFO        pid: 7028 server.py line: 91 Connection to ('127.0.0.1', 60758) established 
+2021-04-11 16:45:44,153   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'presence', 'time': 1618148743.651557, 'user': {'account_name': 'aaa'}}
+2021-04-11 16:45:44,700   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618148744.1999302, 'account_name': 'aaa'}
+2021-04-11 16:45:45,202   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_contacts', 'time': 1618148744.717461, 'user': 'aaa'}
+2021-04-11 16:46:06,721   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618148766.2447848, 'account_name': 'aaa'}
+2021-04-11 16:46:07,236   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618148766.89291, 'account_name': 'aaa'}
+2021-04-11 16:46:08,244   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'add', 'time': 1618148768.2028146, 'user': 'aaa', 'account_name': 'bbb'}
+2021-04-11 16:46:23,276   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618148782.9878645, 'mess_text': 'qqqqqqqqqqqqqqqqqq'}
+2021-04-11 16:46:23,307   ERROR       pid: 7028 server.py line: 133 Пользователь bbb не зарегистрирован на сервере, отправка сообщения невозможна.
+2021-04-11 16:46:46,261   INFO        pid: 7028 server.py line: 91 Connection to ('127.0.0.1', 60760) established 
+2021-04-11 16:46:46,762   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'presence', 'time': 1618148806.2610273, 'user': {'account_name': 'bbb'}}
+2021-04-11 16:46:47,305   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_users', 'time': 1618148806.8093622, 'account_name': 'bbb'}
+2021-04-11 16:46:47,814   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'get_contacts', 'time': 1618148807.3372178, 'user': 'bbb'}
+2021-04-11 16:47:01,836   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'message', 'from': 'aaa', 'to': 'bbb', 'time': 1618148821.2599733, 'mess_text': 'wwwwwwww'}
+2021-04-11 16:47:01,872   INFO        pid: 7028 server.py line: 129 Отправлено сообщение пользователю bbb от пользователя aaa.
+2021-04-11 16:47:12,382   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'add', 'time': 1618148831.9438791, 'user': 'bbb', 'account_name': 'aaa'}
+2021-04-11 16:47:21,429   DEBUG       pid: 7028 server.py line: 138 Message fom client : {'action': 'message', 'from': 'bbb', 'to': 'aaa', 'time': 1618148841.3799057, 'mess_text': 'wwwsdfdd'}
+2021-04-11 16:47:21,461   INFO        pid: 7028 server.py line: 129 Отправлено сообщение пользователю aaa от пользователя bbb.
