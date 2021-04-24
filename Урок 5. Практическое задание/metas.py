@@ -37,7 +37,7 @@ class ServerMaker(type):
         super().__init__(clsname, bases, clsdict)
 
 
-##################################################################################
+##########################################################################
 class ClientMaker(type):
     def __init__(self, clsname, bases, clsdict):
         # Список методов, которые используются в функциях класса:
@@ -55,10 +55,12 @@ class ClientMaker(type):
                     if i.opname == 'LOAD_GLOBAL':
                         if i.argval not in methods:
                             methods.append(i.argval)
-        # Если обнаружено использование недопустимого метода accept, listen, socket бросаем исключение:
+        # Если обнаружено использование недопустимого метода accept, listen,
+        # socket бросаем исключение:
         for command in ('accept', 'listen', 'socket'):
             if command in methods:
-                raise TypeError('В классе обнаружено использование запрещённого метода')
+                raise TypeError(
+                    'В классе обнаружено использование запрещённого метода')
         super().__init__(clsname, bases, clsdict)
 
 ###########################################################

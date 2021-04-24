@@ -1,12 +1,11 @@
+from client import  create_presence_message, process_answer
+from common_defs import PRESENCE, DEF_USER, TEST_TIME
+import json
 import os
 import sys
 import unittest
 
 sys.path.append(os.path.join(os.getcwd(), '..'))
-import json
-from common_defs import PRESENCE, DEF_USER, TEST_TIME
-
-from client import create_presence_message, process_answer
 
 
 ###############################################################
@@ -33,15 +32,21 @@ class TestClass(unittest.TestCase):
 
     ###############################################################
     def test_process_answer_200(self):
-        self.assertEqual(process_answer(b'{\n    "response": 200\n}'), '200 : OK')
+        self.assertEqual(
+            process_answer(b'{\n    "response": 200\n}'),
+            '200 : OK')
 
     ###############################################################
     def test_process_answer_400(self):
-        self.assertNotEqual(process_answer(b'{\n    "response": 400,\n    "error": "Bad Request"\n}'), '200 : OK')
+        self.assertNotEqual(
+            process_answer(b'{\n    "response": 400,\n    "error": "Bad Request"\n}'),
+            '200 : OK')
 
     ###############################################################
     def test_process_answer_400(self):
-        self.assertEqual(process_answer(b'{\n    "response": 400,\n    "error": "Bad Request"\n}'), '400 : Bad Request')
+        self.assertEqual(
+            process_answer(b'{\n    "response": 400,\n    "error": "Bad Request"\n}'),
+            '400 : Bad Request')
 
 
 ###############################################################

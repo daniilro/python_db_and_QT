@@ -42,7 +42,8 @@ class MainWindow(QMainWindow):
                                        QSizePolicy.MinimumExpanding))
         screen = QDesktopWidget().screenGeometry()
         size = self.geometry()
-        self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
+        self.move((screen.width() - size.width()) / 2,
+                  (screen.height() - size.height()) / 2)
 
         pal = QPalette()
         pal.setColor(QPalette.Background, QColor('PowderBlue'))
@@ -68,7 +69,8 @@ class MainWindow(QMainWindow):
     def gui_create_model(database):
         list_users = database.active_users_list()
         list = QStandardItemModel()
-        list.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
+        list.setHorizontalHeaderLabels(
+            ['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
         for row in list_users:
             user, ip, port, time = row
             user = QStandardItem(user)
@@ -77,7 +79,8 @@ class MainWindow(QMainWindow):
             ip.setEditable(False)
             port = QStandardItem(str(port))
             port.setEditable(False)
-            # Уберём милисекунды из строки времени, т.к. такая точность не требуется.
+            # Уберём милисекунды из строки времени, т.к. такая точность не
+            # требуется.
             time = QStandardItem(str(time.replace(microsecond=0)))
             time.setEditable(False)
             list.appendRow([user, ip, port, time])
@@ -88,7 +91,8 @@ class MainWindow(QMainWindow):
 def gui_create_model(database):
     list_users = database.active_users_list()
     list = QStandardItemModel()
-    list.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
+    list.setHorizontalHeaderLabels(
+        ['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
     for row in list_users:
         user, ip, port, time = row
         user = QStandardItem(user)
@@ -97,7 +101,8 @@ def gui_create_model(database):
         ip.setEditable(False)
         port = QStandardItem(str(port))
         port.setEditable(False)
-        # Уберём милисекунды из строки времени, т.к. такая точность не требуется.
+        # Уберём милисекунды из строки времени, т.к. такая точность не
+        # требуется.
         time = QStandardItem(str(time.replace(microsecond=0)))
         time.setEditable(False)
         list.appendRow([user, ip, port, time])
@@ -110,8 +115,10 @@ def create_stat_model(database):
     # hist_list = database.login_history()
 
     list = QStandardItemModel()
-    list.setHorizontalHeaderLabels(
-        ['Имя Клиента', 'Последний раз входил', 'Сообщений отправлено', 'Сообщений получено'])
+    list.setHorizontalHeaderLabels(['Имя Клиента',
+                                    'Последний раз входил',
+                                    'Сообщений отправлено',
+                                    'Сообщений получено'])
     for row in hist_list:
         user, last_seen, sent, recvd = row
         user = QStandardItem(user)
@@ -207,7 +214,9 @@ class ConfigWindow(QDialog):
         self.ip_label.setFixedSize(180, 15)
 
         # Метка с напоминанием о пустом поле.
-        self.ip_label_note = QLabel(' оставьте это поле пустым, чтобы\n принимать соединения с любых адресов.', self)
+        self.ip_label_note = QLabel(
+            ' оставьте это поле пустым, чтобы\n принимать соединения с любых адресов.',
+            self)
         self.ip_label_note.move(10, 168)
         self.ip_label_note.setFixedSize(500, 30)
 

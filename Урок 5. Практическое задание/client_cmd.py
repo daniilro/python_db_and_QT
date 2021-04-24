@@ -23,7 +23,7 @@ sock_lock = threading.Lock()
 database_lock = threading.Lock()
 
 
-##################################################################################
+##########################################################################
 class ClientSender(threading.Thread, metaclass=ClientMaker):
     def __init__(self, account_name, sock, database):
         self.account_name = account_name
@@ -39,7 +39,7 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
             ACCOUNT_NAME: self.account_name
         }
 
-    ##################################################################################################
+    ##########################################################################
     def create_message(self):
         to = input('Введите получателя сообщения: ')
         message = input('Введите сообщение для отправки: ')
@@ -58,11 +58,11 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
         try:
             send_message(self.sock, message_dict)
             LOGGER.info(f'Отправлено сообщение для пользователя {to}')
-        except:
+        except BaseException:
             LOGGER.critical('Потеряно соединение с сервером.')
             exit(1)
 
-    ##################################################################################################
+    ##########################################################################
     def run(self):
         self.print_help()
         while True:
@@ -74,7 +74,7 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
             elif command == 'exit':
                 try:
                     send_message(self.sock, self.create_exit_message())
-                except:
+                except BaseException:
                     pass
                 LOGGER.info('Connection closed.')
                 # Задержка неоходима, чтобы успело уйти сообщение о выходе
@@ -96,7 +96,7 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
                 print('Undefined command.')
                 self.print_help()
 
-    ##################################################################################################
+    ##########################################################################
     def print_help(self):
         print('Поддерживаемые команды:')
         print('message - отправить сообщение. Кому и текст будет запрошены отдельно.')
@@ -106,7 +106,7 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
         print('help - вывести подсказки по командам')
         print('exit - выход из программы')
 
-    ##################################################################################################
+    ##########################################################################
     def edit_contacts(self):
         ans = input('Для удаления введите del, для добавления add: ')
         if ans == 'del':
@@ -126,23 +126,46 @@ class ClientSender(threading.Thread, metaclass=ClientMaker):
                     try:
                         add_contact(self.sock, self.account_name, edit)
                     except ServerError:
-                        LOGGER.error('Не удалось отправить информацию на сервер.')
+                        LOGGER.error(
+                            'Не удалось отправить информацию на сервер.')
 
-    ##################################################################################################
+    ##########################################################################
     def print_history(self):
-        ask = input('Показать входящие сообщения - in, исходящие - out, все - просто Enter: ')
+        ask = input(
+            'Показать входящие сообщения - in, исходящие - out, все - просто Enter: ')
         with database_lock:
             if ask == 'in':
-                print(tabulate(self.database.get_history(to_who=self.account_name),
-                               headers=['From', 'To', 'Message', 'Sent']))
+                print(
+                    tabulate(
+                        self.database.get_history(
+                            to_who=self.account_name),
+                        headers=[
+                            'From',
+                            'To',
+                            'Message',
+                            'Sent']))
             elif ask == 'out':
-                print(tabulate(self.database.get_history(from_who=self.account_name),
-                               headers=['From', 'To', 'Message', 'Sent']))
+                print(
+                    tabulate(
+                        self.database.get_history(
+                            from_who=self.account_name),
+                        headers=[
+                            'From',
+                            'To',
+                            'Message',
+                            'Sent']))
             else:
-                print(tabulate(self.database.get_history(), headers=['From', 'To', 'Message', 'Sent']))
+                print(
+                    tabulate(
+                        self.database.get_history(),
+                        headers=[
+                            'From',
+                            'To',
+                            'Message',
+                            'Sent']))
 
 
-##################################################################################################
+##########################################################################
 class ClientReader(threading.Thread, metaclass=ClientMaker):
     def __init__(self, account_name, sock, database):
         self.account_name = account_name
@@ -150,18 +173,21 @@ class ClientReader(threading.Thread, metaclass=ClientMaker):
         self.database = database
         super().__init__()
 
-    # Основной цикл приёмника сообщений, принимает сообщения, выводит в консоль. Завершается при потере соединения.
+    # Основной цикл приёмника сообщений, принимает сообщения, выводит в
+    # консоль. Завершается при потере соединения.
     def run(self):
         while True:
             # Отдыхаем секунду и снова пробуем захватить сокет.
-            # если не сделать тут задержку, то второй поток может достаточно долго ждать освобождения сокета.
+            # если не сделать тут задержку, то второй поток может достаточно
+            # долго ждать освобождения сокета.
             time.sleep(1)
             with sock_lock:
                 try:
                     message = get_my_message(self.sock)
 
                 except IncorrectDataRecivedError:
-                    LOGGER.error(f'Не удалось декодировать полученное сообщение.')
+                    LOGGER.error(
+                        f'Не удалось декодировать полученное сообщение.')
                 except OSError as err:
                     if err.errno:
                         LOGGER.critical(f'Потеряно соединение с сервером.')
@@ -172,20 +198,26 @@ class ClientReader(threading.Thread, metaclass=ClientMaker):
                 else:
                     if ACTION in message and message[ACTION] == MESSAGE and SENDER in message and DESTINATION in message \
                             and MESSAGE_TEXT in message and message[DESTINATION] == self.account_name:
-                        print(f'\nПолучено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
-                        # Захватываем работу с базой данных и сохраняем в неё сообщение
+                        print(
+                            f'\nПолучено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
+                        # Захватываем работу с базой данных и сохраняем в неё
+                        # сообщение
                         with database_lock:
                             try:
-                                self.database.save_message(message[SENDER], self.account_name, message[MESSAGE_TEXT])
-                            except:
-                                LOGGER.error('Ошибка взаимодействия с базой данных')
+                                self.database.save_message(
+                                    message[SENDER], self.account_name, message[MESSAGE_TEXT])
+                            except BaseException:
+                                LOGGER.error(
+                                    'Ошибка взаимодействия с базой данных')
 
-                        LOGGER.info(f'Получено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
+                        LOGGER.info(
+                            f'Получено сообщение от пользователя {message[SENDER]}:\n{message[MESSAGE_TEXT]}')
                     else:
-                        LOGGER.error(f'Получено некорректное сообщение с сервера: {message}')
+                        LOGGER.error(
+                            f'Получено некорректное сообщение с сервера: {message}')
 
 
-##################################################################################################
+##########################################################################
 @log
 def create_presence(account_name):
     out = {
@@ -195,11 +227,12 @@ def create_presence(account_name):
             ACCOUNT_NAME: account_name
         }
     }
-    LOGGER.debug(f'Сформировано {PRESENCE} сообщение для пользователя {account_name}')
+    LOGGER.debug(
+        f'Сформировано {PRESENCE} сообщение для пользователя {account_name}')
     return out
 
 
-##################################################################################################
+##########################################################################
 @log
 def process_response_ans(message):
     LOGGER.debug(f'Разбор приветственного сообщения от сервера: {message}')
@@ -212,7 +245,7 @@ def process_response_ans(message):
     exit(1)
 
 
-##################################################################################################
+##########################################################################
 def contacts_list_request(sock, name):
     LOGGER.debug(f'Запрос контакт листа для пользователся {name}')
     req = {
@@ -230,7 +263,7 @@ def contacts_list_request(sock, name):
         raise ServerError
 
 
-##################################################################################################
+##########################################################################
 def add_contact(sock, username, contact):
     LOGGER.debug(f'Создание контакта {contact}')
     req = {
@@ -248,7 +281,7 @@ def add_contact(sock, username, contact):
     print('Удачное создание контакта.')
 
 
-##################################################################################################
+##########################################################################
 def user_list_request(sock, username):
     LOGGER.debug(f'Запрос списка известных пользователей {username}')
     req = {
@@ -264,7 +297,7 @@ def user_list_request(sock, username):
         raise ServerError
 
 
-##################################################################################################
+##########################################################################
 def remove_contact(sock, username, contact):
     LOGGER.debug(f'Создание контакта {contact}')
     req = {
@@ -282,7 +315,7 @@ def remove_contact(sock, username, contact):
     print('Удачное удаление')
 
 
-##################################################################################################
+##########################################################################
 # @log
 def get_args():
     parser = argparse.ArgumentParser()
@@ -298,7 +331,7 @@ def get_args():
     return args.addr, int(args.port), args.name
 
 
-##################################################################################################
+##########################################################################
 def database_load(sock, database, username):
     try:
         users_list = user_list_request(sock, username)
@@ -316,7 +349,7 @@ def database_load(sock, database, username):
             database.add_contact(contact)
 
 
-##################################################################################################
+##########################################################################
 def main():
     print('Client started')
 
@@ -338,16 +371,19 @@ def main():
         transport.connect((server_address, server_port))
         send_message(transport, create_presence(client_name))
         answer = process_response_ans(get_my_message(transport))
-        LOGGER.info(f'Установлено соединение с сервером. Ответ сервера: {answer}')
+        LOGGER.info(
+            f'Установлено соединение с сервером. Ответ сервера: {answer}')
         print(f'Установлено соединение с сервером.')
     except json.JSONDecodeError:
         LOGGER.error('Не удалось декодировать полученную Json строку.')
         exit(1)
     except ServerError as error:
-        LOGGER.error(f'При установке соединения сервер вернул ошибку: {error.text}')
+        LOGGER.error(
+            f'При установке соединения сервер вернул ошибку: {error.text}')
         exit(1)
     except ReqFieldMissingError as missing_error:
-        LOGGER.error(f'В ответе сервера отсутствует необходимое поле {missing_error.missing_field}')
+        LOGGER.error(
+            f'В ответе сервера отсутствует необходимое поле {missing_error.missing_field}')
         exit(1)
     except (ConnectionRefusedError, ConnectionError):
         LOGGER.critical(
@@ -374,6 +410,6 @@ def main():
             break
 
 
-##################################################################################################
+##########################################################################
 if __name__ == '__main__':
     main()

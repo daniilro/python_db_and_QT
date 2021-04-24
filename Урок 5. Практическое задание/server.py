@@ -22,7 +22,8 @@ from decors import log
 from descrs import Port
 from metas import ServerMaker
 from server_db import *  # ServerStorage
-from server_ui import *  # MainWindow#, gui_create_model, HistoryWindow, create_stat_model, ConfigWindow
+# MainWindow#, gui_create_model, HistoryWindow, create_stat_model, ConfigWindow
+from server_ui import *
 
 ###############################################################
 LOGGER = logging.getLogger('server')
@@ -98,7 +99,8 @@ class Server(threading.Thread, metaclass=ServerMaker):
 
             try:
                 if self.clients:
-                    recv_data_lst, send_data_lst, err_lst = select.select(self.clients, self.clients, [], 0)
+                    recv_data_lst, send_data_lst, err_lst = select.select(
+                        self.clients, self.clients, [], 0)
             except OSError as err:
                 LOGGER.error(f'Ошибка работы с сокетами: {err}')
 
@@ -106,10 +108,13 @@ class Server(threading.Thread, metaclass=ServerMaker):
             if recv_data_lst:
                 for client_with_message in recv_data_lst:
                     try:
-                        self.process_client_message(get_my_message(client_with_message), client_with_message)
+                        self.process_client_message(
+                            get_my_message(client_with_message), client_with_message)
                     except (OSError):
-                        # Ищем клиента в словаре клиентов и удаляем его из него и  базы подключённых
-                        LOGGER.info(f'Клиент {client_with_message.getpeername()} отключился от сервера.')
+                        # Ищем клиента в словаре клиентов и удаляем его из него
+                        # и  базы подключённых
+                        LOGGER.info(
+                            f'Клиент {client_with_message.getpeername()} отключился от сервера.')
                         for name in self.names:
                             if self.names[name] == client_with_message:
                                 self.database.user_logout(name)
@@ -124,7 +129,8 @@ class Server(threading.Thread, metaclass=ServerMaker):
                 try:
                     self.process_message(message, send_data_lst)
                 except (ConnectionAbortedError, ConnectionError, ConnectionResetError, ConnectionRefusedError):
-                    LOGGER.info(f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
+                    LOGGER.info(
+                        f'Связь с клиентом с именем {message[DESTINATION]} была потеряна')
                     self.clients.remove(self.names[message[DESTINATION]])
                     self.database.user_logout(message[DESTINATION])
                     del self.names[message[DESTINATION]]
@@ -143,29 +149,33 @@ class Server(threading.Thread, metaclass=ServerMaker):
     #                    del self.names[message[DESTINATION]]
     #            self.messages.clear()
 
-    ##################################################################################################
+    ##########################################################################
     def process_message(self, message, listen_socks):
-        if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in listen_socks:
+        if message[DESTINATION] in self.names and self.names[message[DESTINATION]
+                                                             ] in listen_socks:
             send_message(self.names[message[DESTINATION]], message)
-            LOGGER.info(f'Отправлено сообщение пользователю {message[DESTINATION]} от пользователя {message[SENDER]}.')
+            LOGGER.info(
+                f'Отправлено сообщение пользователю {message[DESTINATION]} от пользователя {message[SENDER]}.')
         elif message[DESTINATION] in self.names and self.names[message[DESTINATION]] not in listen_socks:
             raise ConnectionError
         else:
             LOGGER.error(
                 f'Пользователь {message[DESTINATION]} не зарегистрирован на сервере, отправка сообщения невозможна.')
 
-    ##################################################################################################
+    ##########################################################################
     def process_client_message(self, message, client):
         LOGGER.debug(f'Message fom client : {message}')
-        # 1 ###############################################################################
+        # 1 ###################################################################
         if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:
-            print("ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:")
+            print(
+                "ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:")
             print(f"names : {self.names}")
             if message[USER][ACCOUNT_NAME] not in self.names.keys():
                 self.names[message[USER][ACCOUNT_NAME]] = client
 
                 client_ip, client_port = client.getpeername()
-                self.database.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
+                self.database.user_login(
+                    message[USER][ACCOUNT_NAME], client_ip, client_port)
 
                 send_message(client, RESPONSE_200)
 
@@ -179,20 +189,19 @@ class Server(threading.Thread, metaclass=ServerMaker):
                 client.close()
             return
 
-
-        # 2 ############################################################################################
+        # 2 ###################################################################
         elif ACTION in message and message[ACTION] == MESSAGE and DESTINATION in message and TIME in message \
                 and SENDER in message and MESSAGE_TEXT in message and self.names[message[SENDER]] == client:
             if message[DESTINATION] in self.names:
                 self.messages.append(message)
-                self.database.process_message(message[SENDER], message[DESTINATION])
+                self.database.process_message(
+                    message[SENDER], message[DESTINATION])
                 send_message(client, RESPONSE_200)
             else:
                 response = RESPONSE_400
                 response[ERROR] = 'Пользователь не зарегистрирован на сервере.'
                 send_message(client, response)
             return
-
 
         # 3 ################################################################
         elif ACTION in message and message[ACTION] == EXIT and ACCOUNT_NAME in message \
@@ -272,13 +281,32 @@ def main():
         elif command == 'exit':
             break
         elif command == 'users':
-            print(tabulate(database.users_list(), headers=['Пользователь', 'Последний вход']))
+            print(
+                tabulate(
+                    database.users_list(),
+                    headers=[
+                        'Пользователь',
+                        'Последний вход']))
         elif command == 'connected':
-            print(tabulate(database.active_users_list(), headers=['Пользователь', 'IP', 'PORT', 'Последний вход']))
+            print(
+                tabulate(
+                    database.active_users_list(),
+                    headers=[
+                        'Пользователь',
+                        'IP',
+                        'PORT',
+                        'Последний вход']))
         elif command == 'loghist':
             name = input(
                 'Введите имя пользователя для просмотра истории. Для вывода всей истории, просто нажмите Enter: ')
-            print(tabulate(database.login_history(name), headers=['Пользователь', 'Время входа', 'IP', 'PORT']))
+            print(
+                tabulate(
+                    database.login_history(name),
+                    headers=[
+                        'Пользователь',
+                        'Время входа',
+                        'IP',
+                        'PORT']))
 
         else:
             print('Команда не распознана.')

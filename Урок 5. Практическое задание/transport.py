@@ -43,7 +43,8 @@ class ClientTransport(threading.Thread, QObject):
             if err.errno:
                 logger.critical(f'Потеряно соединение с сервером.')
                 raise ServerError('Потеряно соединение с сервером!')
-            logger.error('Timeout соединения при обновлении списков пользователей.')
+            logger.error(
+                'Timeout соединения при обновлении списков пользователей.')
         except json.JSONDecodeError:
             logger.critical(f'Потеряно соединение с сервером.')
             raise ServerError('Потеряно соединение с сервером!')
@@ -58,7 +59,8 @@ class ClientTransport(threading.Thread, QObject):
         # Таймаут необходим для освобождения сокета.
         self.transport.settimeout(5)
 
-        # Соединяемся, 5 попыток соединения, флаг успеха ставим в True если удалось
+        # Соединяемся, 5 попыток соединения, флаг успеха ставим в True если
+        # удалось
         connected = False
         for i in range(2):
             logger.info(f'Попытка подключения №{i + 1}')
@@ -78,7 +80,8 @@ class ClientTransport(threading.Thread, QObject):
 
         logger.debug('Установлено соединение с сервером')
 
-        # Посылаем серверу приветственное сообщение и получаем ответ что всё нормально или ловим исключение.
+        # Посылаем серверу приветственное сообщение и получаем ответ что всё
+        # нормально или ловим исключение.
         try:
             with socket_lock:
                 send_message(self.transport, self.create_presence())
@@ -99,10 +102,12 @@ class ClientTransport(threading.Thread, QObject):
                 ACCOUNT_NAME: self.username
             }
         }
-        logger.debug(f'Сформировано {PRESENCE} сообщение для пользователя {self.username}')
+        logger.debug(
+            f'Сформировано {PRESENCE} сообщение для пользователя {self.username}')
         return out
 
-    # Функция обрабатывающяя сообщения от сервера. Ничего не возращает. Генерирует исключение при ошибке.
+    # Функция обрабатывающяя сообщения от сервера. Ничего не возращает.
+    # Генерирует исключение при ошибке.
     def process_server_ans(self, message):
         logger.debug(f'Разбор сообщения от сервера: {message}')
 
@@ -113,13 +118,17 @@ class ClientTransport(threading.Thread, QObject):
             elif message[RESPONSE] == 400:
                 raise ServerError(f'{message[ERROR]}')
             else:
-                logger.debug(f'Принят неизвестный код подтверждения {message[RESPONSE]}')
+                logger.debug(
+                    f'Принят неизвестный код подтверждения {message[RESPONSE]}')
 
-        # Если это сообщение от пользователя добавляем в базу, даём сигнал о новом сообщении
+        # Если это сообщение от пользователя добавляем в базу, даём сигнал о
+        # новом сообщении
         elif ACTION in message and message[ACTION] == MESSAGE and SENDER in message and DESTINATION in message \
                 and MESSAGE_TEXT in message and message[DESTINATION] == self.username:
-            logger.debug(f'Получено сообщение от пользователя {message[SENDER]}:{message[MESSAGE_TEXT]}')
-            self.database.save_message(message[SENDER], 'in', message[MESSAGE_TEXT])
+            logger.debug(
+                f'Получено сообщение от пользователя {message[SENDER]}:{message[MESSAGE_TEXT]}')
+            self.database.save_message(
+                message[SENDER], 'in', message[MESSAGE_TEXT])
             self.new_message.emit(message[SENDER])
 
     # Функция обновляющая контакт - лист с сервера
@@ -220,7 +229,8 @@ class ClientTransport(threading.Thread, QObject):
         logger.debug('Запущен процесс - приёмник собщений с сервера.')
         while self.running:
             # Отдыхаем секунду и снова пробуем захватить сокет.
-            # если не сделать тут задержку, то отправка может достаточно долго ждать освобождения сокета.
+            # если не сделать тут задержку, то отправка может достаточно долго
+            # ждать освобождения сокета.
             time.sleep(1)
             with socket_lock:
                 try:

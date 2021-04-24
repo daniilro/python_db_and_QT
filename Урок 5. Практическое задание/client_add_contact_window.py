@@ -31,7 +31,8 @@ class AddContactDialog(QDialog):
         self.btn_refresh.clicked.connect(self.update_possible_contacts)
         # self.buttonBox.accepted.connect(self.clickOk)
 
-        # connect(ui->buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), SLOT(on_reset_clicked())
+        # connect(ui->buttonBox->button(QDialogButtonBox::Reset),
+        # SIGNAL(clicked()), SLOT(on_reset_clicked())
 
     ###############################################
     def possible_contacts_update(self):

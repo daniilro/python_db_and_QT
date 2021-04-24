@@ -1,13 +1,12 @@
+from server import process_client_message
+from common_defs import ACCOUNT_NAME, DEF_USER, RESPONSE, ERROR, PRESENCE, ACTION, TIME, USER, TEST_TIME, RESP_OK, \
+    RESP_ERROR
+import getpass
 import os
 import sys
 import unittest
 
 sys.path.append(os.path.join(os.getcwd(), '..'))
-import getpass
-from common_defs import ACCOUNT_NAME, DEF_USER, RESPONSE, ERROR, PRESENCE, ACTION, TIME, USER, TEST_TIME, RESP_OK, \
-    RESP_ERROR
-
-from server import process_client_message
 
 
 #################################################################
@@ -30,8 +29,8 @@ class TestServer(unittest.TestCase):
 
     #################################################################
     def test_no_action(self):
-        self.assertEqual(process_client_message(
-            {'time': '1.1', 'user': {"account_name": getpass.getuser()}}), {RESPONSE: 400, ERROR: 'Bad Request'})
+        self.assertEqual(process_client_message({'time': '1.1', 'user': {
+                         "account_name": getpass.getuser()}}), {RESPONSE: 400, ERROR: 'Bad Request'})
 
 
 #################################################################

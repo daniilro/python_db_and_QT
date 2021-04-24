@@ -74,7 +74,8 @@ if __name__ == '__main__':
         print("User interrupt")
         exit(0)
 
-    server_address, server_port, client_name = connect_window.host.text(), connect_window.port.text(), connect_window.client_name.text()
+    server_address, server_port, client_name = connect_window.host.text(
+    ), connect_window.port.text(), connect_window.client_name.text()
 
     if not server_port.isdigit():
         mess = f'Задан неверный номер порта: {server_port}.' \
@@ -96,10 +97,15 @@ if __name__ == '__main__':
 
     # Создаём объект - транспорт и запускаем транспортный поток
     try:
-        transport = ClientTransport(server_port, server_address, database, client_name)
+        transport = ClientTransport(
+            server_port, server_address, database, client_name)
     except ServerError as error:
         LOGGER.fatal(error.text)
-        QMessageBox.critical(connect_window, 'Error', error.text, QMessageBox.Ok)
+        QMessageBox.critical(
+            connect_window,
+            'Error',
+            error.text,
+            QMessageBox.Ok)
         exit(1)
 
     del connect_window
