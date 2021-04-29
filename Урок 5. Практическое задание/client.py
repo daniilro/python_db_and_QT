@@ -23,6 +23,9 @@ LOGGER = logging.getLogger('client')
 
 ################################################################
 def get_args():
+    '''
+    Get command line arguments
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--addr", default=DEF_IP_ADDR)
     parser.add_argument("-p", "--port", type=int, default=DEF_PORT)
