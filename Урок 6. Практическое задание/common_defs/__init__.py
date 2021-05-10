@@ -29,12 +29,16 @@ ENCODING = DEFAULT_ENCODING
 MESSAGE = 'message'
 MESSAGE_TEXT = 'mess_text'
 ACCOUNT_NAME = 'account_name'
+PUBLIC_KEY = 'pubkey'
+DATA = 'bin'
 MAX_CONNECTIONS = 100
 # DEF_USER
 SENDER = 'from'
 DESTINATION = 'to'
 EXIT = 'exit'
 LIST_INFO = 'data_list'
+USERS_REQUEST = 'get_users'
+PUBLIC_KEY_REQUEST = 'pubkey_need'
 
 RESPONSE_200 = {RESPONSE: 200}
 RESPONSE_400 = {
@@ -44,6 +48,15 @@ RESPONSE_400 = {
 RESPONSE_202 = {RESPONSE: 202,
                 LIST_INFO: None
                 }
+
+RESPONSE_511 = {
+    RESPONSE: 511,
+    DATA: None
+}
+
+RESPONSE_205 = {
+    RESPONSE: 205
+}
 
 DEF_TIMEOUT = 2
 
