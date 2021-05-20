@@ -10,9 +10,9 @@ import time
 
 from tabulate import tabulate
 
-from client_db import ClientDB
+from client_db import ClientDatabase
 from common_defs import *
-from common_defs.messages import send_message, get_my_message
+from common_defs.messages import send_message, get_message
 from decors import log
 from errors import IncorrectDataRecivedError, ReqFieldMissingError, ServerError
 from metas import ClientMaker

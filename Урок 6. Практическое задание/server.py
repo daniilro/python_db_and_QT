@@ -17,7 +17,7 @@ from PyQt5.QtWidgets import QApplication
 # import tabulate
 from tabulate import tabulate
 
-from common_defs.messages import send_message, get_my_message
+from common_defs.messages import send_message, get_message
 from decors import log
 from descrs import Port
 from metas import ServerMaker
@@ -109,7 +109,7 @@ class Server(threading.Thread, metaclass=ServerMaker):
                 for client_with_message in recv_data_lst:
                     try:
                         self.process_client_message(
-                            get_my_message(client_with_message), client_with_message)
+                            get_message(client_with_message), client_with_message)
                     except (OSError):
                         # Ищем клиента в словаре клиентов и удаляем его из него
                         # и  базы подключённых

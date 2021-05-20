@@ -11,7 +11,7 @@ from errors import IncorrectDataRecivedError, NonDictInputError
 
 ######################################################################
 # @log
-def get_my_message(client):
+def get_message(client):
     encoded_response = client.recv(DATA_PACK_SIZE)
     if isinstance(encoded_response, bytes):
         json_response = encoded_response.decode(DEFAULT_ENCODING)

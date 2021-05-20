@@ -5,11 +5,14 @@
 
 import argparse
 import sys
+import os
+
+from Cryptodome.PublicKey import RSA
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import qApp, QMessageBox
 
-from client_db import ClientDB
+from client_db import ClientDatabase
 from client_main_window import ClientMainWindow
 from common_defs import *
 from errors import ServerError
@@ -23,21 +26,24 @@ LOGGER = logging.getLogger('client')
 
 ################################################################
 def get_args():
-    '''
-    Get command line arguments
-    '''
     parser = argparse.ArgumentParser()
-    parser.add_argument("-a", "--addr", default=DEF_IP_ADDR)
-    parser.add_argument("-p", "--port", type=int, default=DEF_PORT)
-    # parser.add_argument('-n', '--name', default=None, nargs='?')
-    parser.add_argument('-n', '--name', default='test_user', nargs='?')
-    args = parser.parse_args()
-    if int(args.port) < 1024 or int(args.port) > 65535:
-        LOGGER.fatal(
-            f'Попытка запуска поцесса с неподходящим номером порта: {int(args.port)}.'
-            f' Допустимы адреса с 1024 до 65535. Поцесс завершается.')
+    parser.add_argument('addr', default=DEF_IP_ADDR, nargs='?')
+    parser.add_argument('port', default=DEF_PORT, type=int, nargs='?')
+    parser.add_argument('-n', '--name', default=None, nargs='?')
+    parser.add_argument('-p', '--password', default='', nargs='?')
+    namespace = parser.parse_args(sys.argv[1:])
+    server_address = namespace.addr
+    server_port = namespace.port
+    client_name = namespace.name
+    client_passwd = namespace.password
+
+    # проверим подходящий номер порта
+    if not 1023 < server_port < 65536:
+        LOGGER.critical(
+            f'Попытка запуска клиента с неподходящим номером порта: {server_port}. Допустимы адреса с 1024 до 65535. Клиент завершается.')
         exit(1)
-    return args.addr, int(args.port), args.name
+
+    return server_address, server_port, client_name, client_passwd
 
 
 ################################################################
@@ -66,7 +72,7 @@ class ClientConnectWindow(QtWidgets.QDialog):
 if __name__ == '__main__':
 
     # login ###############################################################
-    server_address, server_port, client_name = get_args()
+    server_address, server_port, client_name, client_passwd = get_args()
 
     app = QtWidgets.QApplication(sys.argv)
     connect_window = ClientConnectWindow()
@@ -77,8 +83,8 @@ if __name__ == '__main__':
         print("User interrupt")
         exit(0)
 
-    server_address, server_port, client_name = connect_window.host.text(
-    ), connect_window.port.text(), connect_window.client_name.text()
+    server_address, server_port, client_name, client_passwd = connect_window.host.text(
+    ), connect_window.port.text(), connect_window.client_name.text(), connect_window.client_passwd.text()
 
     if not server_port.isdigit():
         mess = f'Задан неверный номер порта: {server_port}.' \
@@ -96,12 +102,28 @@ if __name__ == '__main__':
 
     # main ###############################################################
 
-    database = ClientDB(client_name)
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    key_file = os.path.join(dir_path, f'{client_name}.key')
+    if not os.path.exists(key_file):
+        keys = RSA.generate(2048, os.urandom)
+        with open(key_file, 'wb') as key:
+            key.write(keys.export_key())
+    else:
+        with open(key_file, 'rb') as key:
+            keys = RSA.import_key(key.read())
 
-    # Создаём объект - транспорт и запускаем транспортный поток
+    LOGGER.debug("Keys sucsessfully loaded.")
+
+    database = ClientDatabase(client_name)
+
     try:
         transport = ClientTransport(
-            server_port, server_address, database, client_name)
+            server_port,
+            server_address,
+            database,
+            client_name,
+            client_passwd,
+            keys)
     except ServerError as error:
         LOGGER.fatal(error.text)
         QMessageBox.critical(
@@ -116,16 +138,12 @@ if __name__ == '__main__':
     transport.setDaemon(True)
     transport.start()
 
-    # Создаём GUI
     client_app = QtWidgets.QApplication(sys.argv)
-    main_window = ClientMainWindow(database, transport)
+    main_window = ClientMainWindow(database, transport, keys)
     main_window.show()
     main_window.make_connection(transport)
     main_window.setWindowTitle(f'"{client_name}" chat')
     client_app.exec_()
 
-    # Раз графическая оболочка закрылась, закрываем транспорт
     transport.transport_shutdown()
     transport.join()
-
-#    sys.exit(status)
