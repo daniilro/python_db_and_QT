@@ -7,7 +7,7 @@ import log.config.config_server_log
 from common_defs import *
 #from common.decos import log
 from core import MessageProcessor
-from database import ServerStorage
+from server_db import ServerDatabase
 from main_window import MainWindow
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
@@ -64,7 +64,7 @@ def main():
         config['SETTINGS']['Default_port'], config['SETTINGS']['Listen_Address'])
 
     # Инициализация базы данных
-    database = ServerStorage(
+    database = ServerDatabase(
         os.path.join(
             config['SETTINGS']['Database_path'],
             config['SETTINGS']['Database_file']))

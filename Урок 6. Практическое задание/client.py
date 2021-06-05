@@ -13,7 +13,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import qApp, QMessageBox
 
 from client_db import ClientDatabase
-from client_main_window import ClientMainWindow
+from client_main_wnd import ClientMainWindow
 from common_defs import *
 from errors import ServerError
 from transport import ClientTransport

@@ -15,7 +15,7 @@ import json
 
 import base64
 
-from client_add_contact_window import AddContactDialog
+from client_add_contact_wnd import AddContactDialog
 from common_defs import *
 from errors import ServerError
 

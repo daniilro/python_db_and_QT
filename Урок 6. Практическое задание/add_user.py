@@ -1,11 +1,17 @@
+'''
+
+'''
 from PyQt5.QtWidgets import QDialog, QPushButton, QLineEdit, QApplication, QLabel, QMessageBox
 from PyQt5.QtCore import Qt
 import hashlib
 import binascii
 
 
+##########################################################################
 class RegisterUser(QDialog):
-    '''Класс диалог регистрации пользователя на сервере.'''
+    '''
+    RegisterUser dialog
+    '''
 
     def __init__(self, database, server):
         super().__init__()
@@ -55,9 +61,10 @@ class RegisterUser(QDialog):
 
         self.show()
 
+    ##########################################################################
     def save_data(self):
         '''
-        Метод проверки правильности ввода и сохранения в базу нового пользователя.
+        New user add
         '''
         if not self.client_name.text():
             self.messages.critical(
@@ -72,8 +79,6 @@ class RegisterUser(QDialog):
                 self, 'Ошибка', 'Пользователь уже существует.')
             return
         else:
-            # Генерируем хэш пароля, в качестве соли будем использовать логин в
-            # нижнем регистре.
             passwd_bytes = self.client_passwd.text().encode('utf-8')
             salt = self.client_name.text().lower().encode('utf-8')
             passwd_hash = hashlib.pbkdf2_hmac(
@@ -83,13 +88,5 @@ class RegisterUser(QDialog):
                 binascii.hexlify(passwd_hash))
             self.messages.information(
                 self, 'Успех', 'Пользователь успешно зарегистрирован.')
-            # Рассылаем клиентам сообщение о необходимости обновить справичники
             self.server.service_update_lists()
             self.close()
-
-
-if __name__ == '__main__':
-    app = QApplication([])
-    app.setAttribute(Qt.AA_DisableWindowContextHelpButton)
-    dial = RegisterUser(None)
-    app.exec_()
