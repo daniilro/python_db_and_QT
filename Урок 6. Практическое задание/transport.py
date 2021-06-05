@@ -202,11 +202,11 @@ class ClientTransport(threading.Thread, QObject):
         if RESPONSE in ans and ans[RESPONSE] == 202:
             self.database.add_users(ans[LIST_INFO])
         else:
-            logger.error('Не удалось обновить список известных пользователей.')
+            logger.error('Unable to update known users list.')
 
     def key_request(self, user):
         '''Метод запрашивающий с сервера публичный ключ пользователя.'''
-        logger.debug(f'Запрос публичного ключа для {user}')
+        logger.debug(f'Public key request for {user}')
         req = {
             ACTION: PUBLIC_KEY_REQUEST,
             TIME: time.time(),
@@ -218,11 +218,11 @@ class ClientTransport(threading.Thread, QObject):
         if RESPONSE in ans and ans[RESPONSE] == 511:
             return ans[DATA]
         else:
-            logger.error(f'Не удалось получить ключ собеседника{user}.')
+            logger.error(f'Unable to get key for {user}.')
 
     def add_contact(self, contact):
         '''Метод отправляющий на сервер сведения о добавлении контакта.'''
-        logger.debug(f'Создание контакта {contact}')
+        logger.debug(f'Creating contact {contact}')
         req = {
             ACTION: ADD_CONTACT,
             TIME: time.time(),
@@ -235,7 +235,7 @@ class ClientTransport(threading.Thread, QObject):
 
     def remove_contact(self, contact):
         '''Метод отправляющий на сервер сведения о удалении контакта.'''
-        logger.debug(f'Удаление контакта {contact}')
+        logger.debug(f'Deleting contact {contact}')
         req = {
             ACTION: REMOVE_CONTACT,
             TIME: time.time(),

@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 #####################################################################
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, database, server, config):
         super().__init__()
         self.initUI()
 

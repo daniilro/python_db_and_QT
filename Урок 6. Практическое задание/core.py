@@ -6,11 +6,12 @@ import json
 import hmac
 import binascii
 import os
-from common.metaclasses import ServerMaker
-from common.descryptors import Port
-from common.variables import *
-from common.utils import send_message, get_message
-from common.decos import login_required
+from metas import ServerMaker
+from descrs import Port
+from common_defs import *
+from common_defs.messages import send_message, get_message
+#from common.utils import send_message, get_message
+from decors import login_required, log
 
 # Загрузка логера
 logger = logging.getLogger('server')

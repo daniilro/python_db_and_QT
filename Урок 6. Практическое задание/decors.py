@@ -4,9 +4,22 @@
 '''
 
 import inspect
+import socket
 import logging
 import sys
 import traceback
+
+import log.config.config_client_log
+import log.config.config_server_log
+
+from common_defs import *
+
+sys.path.append('../')
+
+#from core import MessageProcessor
+from common_defs import ACTION, PRESENCE
+
+
 
 if sys.argv[0].find('client') == -1:
     LOGGER = logging.getLogger('server')
@@ -27,3 +40,41 @@ def log(func_to_log):
         return ret
 
     return logger
+
+def login_required(func):
+    '''
+    Декоратор, проверяющий, что клиент авторизован на сервере.
+    Проверяет, что передаваемый объект сокета находится в
+    списке авторизованных клиентов.
+    За исключением передачи словаря-запроса
+    на авторизацию. Если клиент не авторизован,
+    генерирует исключение TypeError
+    '''
+
+    def checker(*args, **kwargs):
+        # проверяем, что первый аргумент - экземпляр MessageProcessor
+        # Импортить необходимо тут, иначе ошибка рекурсивного импорта.
+        from core import MessageProcessor
+        if isinstance(args[0], MessageProcessor):
+            found = False
+            for arg in args:
+                if isinstance(arg, socket.socket):
+                    # Проверяем, что данный сокет есть в списке names класса
+                    # MessageProcessor
+                    for client in args[0].names:
+                        if args[0].names[client] == arg:
+                            found = True
+
+            # Теперь надо проверить, что передаваемые аргументы не presence
+            # сообщение. Если presense, то разрешаем
+            for arg in args:
+                if isinstance(arg, dict):
+                    if ACTION in arg and arg[ACTION] == PRESENCE:
+                        found = True
+            # Если не не авторизован и не сообщение начала авторизации, то
+            # вызываем исключение.
+            if not found:
+                raise TypeError
+        return func(*args, **kwargs)
+
+    return checker
