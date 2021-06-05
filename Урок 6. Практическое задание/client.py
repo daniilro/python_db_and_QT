@@ -58,6 +58,7 @@ class ClientConnectWindow(QtWidgets.QDialog):
         self.host.setText(server_address)
         self.port.setText(str(server_port))
         self.client_name.setText(client_name)
+        self.client_passwd.setText(client_passwd)
 
     ################################################################
     def clickOk(self):
