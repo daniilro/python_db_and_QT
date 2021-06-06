@@ -78,11 +78,13 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     connect_window = ClientConnectWindow()
     connect_window.show()
-    app.exec_()
 
-    if not connect_window.ok_pressed:
-        print("User interrupt")
-        exit(0)
+    if not client_name or not client_passwd:
+        app.exec_()
+
+        if not connect_window.ok_pressed:
+            print("User interrupt")
+            exit(0)
 
     server_address, server_port, client_name, client_passwd = connect_window.host.text(
     ), connect_window.port.text(), connect_window.client_name.text(), connect_window.client_passwd.text()
