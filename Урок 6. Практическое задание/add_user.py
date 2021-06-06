@@ -26,7 +26,7 @@ class RegisterUser(QDialog):
 
         self.label_username = QLabel('Введите имя пользователя:', self)
         self.label_username.move(10, 10)
-        self.label_username.setFixedSize(150, 15)
+        self.label_username.setFixedSize(200, 15)
 
         self.client_name = QLineEdit(self)
         self.client_name.setFixedSize(154, 20)
