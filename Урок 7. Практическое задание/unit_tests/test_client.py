@@ -1,3 +1,6 @@
+'''
+test_client
+'''
 from client import  create_presence_message, process_answer
 from common_defs import PRESENCE, DEF_USER, TEST_TIME
 import json

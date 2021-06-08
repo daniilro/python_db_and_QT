@@ -33,7 +33,7 @@ def arg_parser(default_port, default_address):
     return listen_address, listen_port, gui_flag
 
 
-#@log
+# @log
 def config_load():
     '''Парсер конфигурационного ini файла.'''
     config = configparser.ConfigParser()
@@ -45,14 +45,14 @@ def config_load():
         return config
     else:
         config.add_section('SETTINGS')
-        config.set('SETTINGS', 'Default_port', str(DEFAULT_PORT))
+        config.set('SETTINGS', 'Default_port', str(DEF_PORT))
         config.set('SETTINGS', 'Listen_Address', '')
         config.set('SETTINGS', 'Database_path', '')
         config.set('SETTINGS', 'Database_file', 'server_database.db3')
         return config
 
 
-#@log
+# @log
 def main():
     '''Основная функция'''
     # Загрузка файла конфигурации сервера

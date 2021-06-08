@@ -1,6 +1,5 @@
 '''
-
-
+config_client_log
 '''
 import os
 import sys
@@ -9,6 +8,7 @@ from common_defs import LOGGING_LEVEL
 import logging
 
 sys.path.append(os.path.join(os.getcwd(), '..'))
+
 
 
 #################################################################
