@@ -49,10 +49,10 @@ core.py
 .. autoclass:: core.MessageProcessor
 	:members:
 
-database.py
-~~~~~~~~~~~
+server_db.py
+~~~~~~~~~~~~
 
-.. autoclass:: ServerStorage
+.. autoclass:: server_db.ServerDatabase
 	:members:
 
 main_window.py
