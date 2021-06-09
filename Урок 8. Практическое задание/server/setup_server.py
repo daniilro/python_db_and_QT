@@ -20,9 +20,9 @@ build_exe_options = {
     "packages": ["common_defs", "log", "server", "unit_tests", "codecs", "encodings", "sqlalchemy"],
 }
 setup(
-    name="mess_server",
-    version="0.8.8",
-    description="mess_server",
+    name="msg_server",
+    version="0.0.0.1",
+    description="msg_server",
     options={
         "build_exe": build_exe_options
     },

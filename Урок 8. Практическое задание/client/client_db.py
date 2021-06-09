@@ -6,6 +6,7 @@ import datetime
 from common_defs.messages import *
 from sqlalchemy import create_engine, Table, Column, Integer, String, Text, MetaData, DateTime
 from sqlalchemy.orm import mapper, sessionmaker
+from sqlalchemy.sql import default_comparator
 import os
 
 
@@ -34,7 +35,7 @@ class ClientDatabase:
 
     # Конструктор класса:
     def __init__(self, name):
-        path = os.path.dirname(os.path.realpath(__file__))
+        path = os.getcwd()
         filename = f'client_{name}.db3'
         self.database_engine = create_engine(
             f'sqlite:///{os.path.join(path, filename)}',

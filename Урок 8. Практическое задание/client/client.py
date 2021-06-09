@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
     # main ###############################################################
 
-    dir_path = os.path.dirname(os.path.realpath(__file__))
+    dir_path = os.getcwd()
     key_file = os.path.join(dir_path, f'{client_name}.key')
     if not os.path.exists(key_file):
         keys = RSA.generate(2048, os.urandom)

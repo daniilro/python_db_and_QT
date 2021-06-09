@@ -1,5 +1,4 @@
-(
-cd server
+cd client
 rem python setup.py sdist bdist_wheel
-python setup_server.py build_exe
-)
+python setup_client.py build_exe
+cd ..
