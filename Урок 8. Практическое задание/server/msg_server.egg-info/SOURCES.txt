@@ -1,0 +1,8 @@
+setup.py
+common_defs/__init__.py
+common_defs/messages.py
+msg_server.egg-info/PKG-INFO
+msg_server.egg-info/SOURCES.txt
+msg_server.egg-info/dependency_links.txt
+msg_server.egg-info/requires.txt
+msg_server.egg-info/top_level.txt
