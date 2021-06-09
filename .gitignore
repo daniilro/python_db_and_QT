@@ -5,3 +5,5 @@ client.log*
 server.log*
 *.key
 build
+msg_server.egg-info/*
+dist

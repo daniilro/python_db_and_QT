@@ -1,8 +1,11 @@
+'''
+
+'''
 import sys
 from cx_Freeze import setup, Executable
 
 build_exe_options = {
-    "packages": ["common", "logs", "server", "unit_tests"],
+    "packages": ["common_defs", "log", "server", "unit_tests", "codecs", "encodings", "sqlalchemy"],
 }
 setup(
     name="mess_server",
@@ -12,7 +15,7 @@ setup(
         "build_exe": build_exe_options
     },
     executables=[Executable('server.py',
-                            # base='Win32GUI',
+                            #base='Win32GUI',
                             targetName='server.exe',
                             )]
 )
