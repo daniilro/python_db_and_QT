@@ -15,7 +15,6 @@ https://coderoad.ru/28258991/%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-cx_Freeze-Fata
 
 import sys
 from cx_Freeze import setup, Executable
-
 build_exe_options = {
     "packages": ["common_defs", "log", "client", "codecs", "encodings", "sqlalchemy"],
     "include_files": ["ClientConnectWindow.ui",
